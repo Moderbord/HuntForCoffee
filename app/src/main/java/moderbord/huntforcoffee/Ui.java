@@ -12,14 +12,13 @@ import android.widget.TextView;
 public class Ui extends Activity{
 
     protected MainActivity context;
-    String text = "";
 
     public Ui(Context context){
         this.context = (MainActivity) context;
     }
 
 
-    public void appendText(String append){
+    /*public void appendText(String append){
         text = text + " " + append;
     }
 
@@ -30,24 +29,6 @@ public class Ui extends Activity{
                 context.mainTextWindow.setText(text);
             }
         });
-    }
-
-    public void button0(){
-        submitText();
-        text = "";
-    }
-
-    public void button1(){
-        appendText("test ");
-        System.out.println(text);
-    }
-
-   public void button2(){
-        if(context.bu2.getText().toString() != ""){
-            appendText(context.bu2.getText().toString());
-            submitText();
-            text = "";
-        }
-    }
+    }*/
 
 }

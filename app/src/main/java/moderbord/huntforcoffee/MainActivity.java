@@ -12,6 +12,7 @@ public class MainActivity extends Activity {
 
     TextView mainTextWindow, subTextWindow, statStr, statInt, statAgi, statQui, statCha, statLuck, statLi, statHealth, statMana, statFatigue, statLu, statLvl, statClass, timeClock, timeDate;
     Button bu0, bu1, bu2, bu3, bu4, bu5, bu6, bu7, bu8, bu9;
+    String text = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,55 +38,58 @@ public class MainActivity extends Activity {
         timeDate = (TextView)findViewById(R.id.timeDate);
     }
 
-    public Ui ui = new Ui(this);
+    public void appendText(String append){
+        text = text + " " + append;
+    }
+
+    public void submitText(){
+        mainTextWindow.setText(text);
+    }
 
     public void b0(View view){
         bu0 = (Button)findViewById(R.id.b0);
-        ui.button0();
+        submitText();
+        text = "";
     }
 
     public void b1(View view){
         bu1 = (Button)findViewById(R.id.b1);
-        ui.button1();
+        appendText("test ");
+        System.out.println(text);
     }
 
     public void b2(View view){
         bu2 = (Button)findViewById(R.id.b2);
-        ui.button2();
+        appendText(bu2.getText().toString());
+        submitText();
+        text = "";
     }
 
     public void b3(View view){
         bu2 = (Button)findViewById(R.id.b3);
-        ui.button2();
     }
 
     public void b4(View view){
         bu2 = (Button)findViewById(R.id.b4);
-        ui.button2();
     }
 
     public void b5(View view){
         bu2 = (Button)findViewById(R.id.b5);
-        ui.button2();
     }
 
     public void b6(View view){
         bu2 = (Button)findViewById(R.id.b6);
-        ui.button2();
     }
 
     public void b7(View view){
         bu2 = (Button)findViewById(R.id.b7);
-        ui.button2();
     }
 
     public void b8(View view){
         bu2 = (Button)findViewById(R.id.b8);
-        ui.button2();
     }
 
     public void b9(View view){
         bu2 = (Button)findViewById(R.id.b9);
-        ui.button2();
     }
 }
