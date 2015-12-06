@@ -21,7 +21,8 @@
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="2dp"
-        android:layout_toEndOf="@+id/statInt">
+        android:layout_toEndOf="@+id/statInt"
+        android:id="@+id/scrollView">
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,6 +41,17 @@
             android:paddingTop="2dp" />
 
     </ScrollView>
+
+    <EditText
+        android:layout_width="150sp"
+        android:layout_height="30sp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/nameInput"
+        android:layout_below="@+id/statCha"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:textSize="12sp" />
 
     <ScrollView
         android:layout_width="wrap_content"

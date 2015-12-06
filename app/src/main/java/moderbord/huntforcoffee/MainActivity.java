@@ -6,10 +6,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-    
+
     public EventManager eventManager = new EventManager(this);
     public EventClass eventClass = new EventClass(this);
     public CharCreation charCreation = new CharCreation(this);
@@ -17,7 +18,8 @@ public class MainActivity extends Activity {
 
     TextView mainTextWindow, subTextWindow, statStr, statInt, statAgi, statQui, statCha, statLuck, statLi, statHealth, statMana, statFatigue, statLu, statLvl, statClass, timeClock, timeDate;
     Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9;
-    String text = "";
+    EditText nameInput;
+    String text = "", info = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,8 @@ public class MainActivity extends Activity {
         button8 = (Button)findViewById(R.id.b8);
         button9 = (Button)findViewById(R.id.b9);
 
+        nameInput = (EditText)findViewById(R.id.nameInput);
+        eventManager.addNextEvent("ccPartOne");
     }
 
     public void appendText(String append){
@@ -62,6 +66,15 @@ public class MainActivity extends Activity {
     public void submitText(){
         mainTextWindow.setText(text);
         text = "";
+    }
+
+    public void appendInfo(String append){
+        info = info + append + " ";
+    }
+
+    public void submitInfo(){
+        subTextWindow.setText(info);
+        info = "";
     }
 
     public void b0(View view){

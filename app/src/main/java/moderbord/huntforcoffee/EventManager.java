@@ -51,14 +51,22 @@ public class EventManager {
     public void getNextEvent(){
         String event = EventList[0];
         System.out.println("Try to match event");
-        if (event.equals("Forrest")){
-            System.out.println("Matched Forrest...");
-            main.eventClass.getForrest();
+        if (event.equals("ccPartOne")){
+            System.out.println("Matched " + event + "...");
+            main.charCreation.ccPartOne();
+        } else if (event.equals("ccPartTwo")){
+            System.out.println("Matched " + event + "...");
+            main.charCreation.ccPartTwo();
+        } else if (event.equals("ccPartThree")){
+            System.out.println("Matched " + event + "...");
+            main.charCreation.ccPartThree();
         } else {
             System.out.println("No matching event. Continuing...");
             // Add return here??
         }
+        System.out.println("Removing " + event + " from Eventlist index 0...");
         EventList[0] = null;
+        System.out.println("Event removed. Sorting list...");
         sortEventlist();
     }
 
@@ -68,11 +76,12 @@ public class EventManager {
             if(EventList[i] == null && EventList[z] != null){
                 EventList[i] = EventList[z];
                 EventList[z] = null;
+                System.out.println(EventList[i] + " is now at index " + i + " from index " + z);
             } else {
+                System.out.println("EventList sorted");
                 return;
             }
         }
-        System.out.println("EventList sorted");
     }
 
     public void toggleButtons(int x){
@@ -94,7 +103,7 @@ public class EventManager {
                 } else {
                     buttonList[i].setVisibility(View.VISIBLE);
                 }
-                System.out.println("Button visibility set");
+                System.out.println("Button visibility reset");
             }
         } else if (x == 1){
             for(int i = 0; i < buttonList.length; i++){
