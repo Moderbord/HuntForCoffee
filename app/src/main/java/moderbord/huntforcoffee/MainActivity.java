@@ -12,6 +12,7 @@ public class MainActivity extends Activity {
     
     public EventManager eventManager = new EventManager(this);
     public EventClass eventClass = new EventClass(this);
+    public CharCreation charCreation = new CharCreation(this);
 
 
     TextView mainTextWindow, subTextWindow, statStr, statInt, statAgi, statQui, statCha, statLuck, statLi, statHealth, statMana, statFatigue, statLu, statLvl, statClass, timeClock, timeDate;
@@ -60,6 +61,7 @@ public class MainActivity extends Activity {
 
     public void submitText(){
         mainTextWindow.setText(text);
+        text = "";
     }
 
     public void b0(View view){

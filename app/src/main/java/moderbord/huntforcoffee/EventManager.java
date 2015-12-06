@@ -11,7 +11,7 @@ import android.widget.Switch;
 public class EventManager {
 
     protected MainActivity main;
-    public static String EventList[] = new String[20];
+    public static String EventList[] = new String[10];
 
     public EventManager(Context context){
         this.main = (MainActivity) context;
@@ -22,11 +22,16 @@ public class EventManager {
         System.out.println(sText + "-button was sender");
         for (int i = 0; i < EventList.length; i++){
             if (EventList[i] == null){
-                if (sText.equals("Forrest")){
+                if (isEvent(sText)){
                     EventList[i] = sText;
-                    System.out.println(sText + " added to EventList");
-                    return;
+                    System.out.println(sText + " added to EventList at index " + i);
+                    break;
+                } else {
+                System.out.println("No event was added from sender");
+                    break;
                 }
+            } else {
+                System.out.println("EventList at index " + i + " was occupied by event: " + EventList[i]);
             }
         }
         getNextEvent();
@@ -36,7 +41,7 @@ public class EventManager {
         for (int i = 0; i < EventList.length; i++){
             if (EventList[i] == null){
                 EventList[i] = event;
-                System.out.println(event + " added to EventList");
+                System.out.println(event + " added to EventList at index " + i);
                 return;
 
             }
@@ -45,8 +50,13 @@ public class EventManager {
 
     public void getNextEvent(){
         String event = EventList[0];
+        System.out.println("Try to match event");
         if (event.equals("Forrest")){
+            System.out.println("Matched Forrest...");
             main.eventClass.getForrest();
+        } else {
+            System.out.println("No matching event. Continuing...");
+            // Add return here??
         }
         EventList[0] = null;
         sortEventlist();
@@ -58,12 +68,15 @@ public class EventManager {
             if(EventList[i] == null && EventList[z] != null){
                 EventList[i] = EventList[z];
                 EventList[z] = null;
+            } else {
+                return;
             }
         }
+        System.out.println("EventList sorted");
     }
 
     public void toggleButtons(int x){
-        Button buttonList[] = new Button[9];
+        Button buttonList[] = new Button[10];
         buttonList[0] = main.button0;
         buttonList[1] = main.button1;
         buttonList[2] = main.button2;
@@ -81,14 +94,22 @@ public class EventManager {
                 } else {
                     buttonList[i].setVisibility(View.VISIBLE);
                 }
+                System.out.println("Button visibility set");
             }
         } else if (x == 1){
             for(int i = 0; i < buttonList.length; i++){
                 buttonList[i].setText("");
             }
+            System.out.println("Button text reset");
         }
     }
 
-
+    public boolean isEvent(String event){
+        if(event.equals("Forrest") || event.equals("City")){
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }

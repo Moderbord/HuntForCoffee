@@ -15,13 +15,13 @@ public class EventClass {
     }
 
     public void getForrest(){
-        System.out.println("FORREST from EventClass");
+        System.out.println("FORREST from EventClass here!");
         main.appendText("Welcome to the jungle!");
         main.appendText("We hope you brought lotion.");
         main.submitText();
 
         main.eventManager.toggleButtons(1);
-        main.button0.setText("lotion");
+        main.button0.setText("Lotion");
         main.eventManager.toggleButtons(2);
 
     }

@@ -91,7 +91,8 @@
         android:minWidth="100sp"
         android:layout_above="@+id/b6"
         android:layout_toStartOf="@+id/b2"
-        android:onClick="b1"/>
+        android:onClick="b1"
+        android:visibility="invisible" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -103,7 +104,8 @@
         android:minWidth="100sp"
         android:layout_above="@+id/b7"
         android:layout_toStartOf="@+id/b3"
-        android:onClick="b2"/>
+        android:onClick="b2"
+        android:visibility="invisible" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -115,7 +117,8 @@
         android:minWidth="100sp"
         android:layout_above="@+id/b7"
         android:layout_toEndOf="@+id/b7"
-        android:onClick="b3" />
+        android:onClick="b3"
+        android:visibility="invisible" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -127,7 +130,8 @@
         android:minWidth="100sp"
         android:layout_above="@+id/b9"
         android:layout_alignParentEnd="true"
-        android:onClick="b4" />
+        android:onClick="b4"
+        android:visibility="invisible" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -139,7 +143,8 @@
         android:minWidth="100sp"
         android:layout_alignParentBottom="true"
         android:layout_toStartOf="@+id/b6"
-        android:onClick="b5" />
+        android:onClick="b5"
+        android:visibility="invisible" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -151,7 +156,8 @@
         android:minWidth="100sp"
         android:layout_alignParentBottom="true"
         android:layout_toStartOf="@+id/b7"
-        android:onClick="b6" />
+        android:onClick="b6"
+        android:visibility="invisible" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -163,7 +169,8 @@
         android:layout_alignParentBottom="true"
         android:layout_toStartOf="@+id/b8"
         android:minWidth="100sp"
-        android:onClick="b7" />
+        android:onClick="b7"
+        android:visibility="invisible" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -175,7 +182,8 @@
         android:layout_alignParentBottom="true"
         android:layout_toStartOf="@+id/b9"
         android:minWidth="100sp"
-        android:onClick="b8" />
+        android:onClick="b8"
+        android:visibility="invisible" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -187,7 +195,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:minWidth="100sp"
-        android:onClick="b9" />
+        android:onClick="b9"
+        android:visibility="invisible" />
 
     <TextView
         android:layout_width="wrap_content"
