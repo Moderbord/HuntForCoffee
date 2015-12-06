@@ -9,9 +9,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
+    
+    public EventManager eventManager = new EventManager(this);
+    public EventClass eventClass = new EventClass(this);
+
 
     TextView mainTextWindow, subTextWindow, statStr, statInt, statAgi, statQui, statCha, statLuck, statLi, statHealth, statMana, statFatigue, statLu, statLvl, statClass, timeClock, timeDate;
-    Button bu0, bu1, bu2, bu3, bu4, bu5, bu6, bu7, bu8, bu9;
+    Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9;
     String text = "";
 
     @Override
@@ -36,10 +40,22 @@ public class MainActivity extends Activity {
         statClass = (TextView)findViewById(R.id.statClass);
         timeClock = (TextView)findViewById(R.id.timeClock);
         timeDate = (TextView)findViewById(R.id.timeDate);
+
+        button0 = (Button)findViewById(R.id.b0);
+        button1 = (Button)findViewById(R.id.b1);
+        button2 = (Button)findViewById(R.id.b2);
+        button3 = (Button)findViewById(R.id.b3);
+        button4 = (Button)findViewById(R.id.b4);
+        button5 = (Button)findViewById(R.id.b5);
+        button6 = (Button)findViewById(R.id.b6);
+        button7 = (Button)findViewById(R.id.b7);
+        button8 = (Button)findViewById(R.id.b8);
+        button9 = (Button)findViewById(R.id.b9);
+
     }
 
     public void appendText(String append){
-        text = text + " " + append;
+        text = text + append + " ";
     }
 
     public void submitText(){
@@ -47,49 +63,33 @@ public class MainActivity extends Activity {
     }
 
     public void b0(View view){
-        bu0 = (Button)findViewById(R.id.b0);
-        submitText();
-        text = "";
+        eventManager.addEvent(button0);
     }
 
     public void b1(View view){
-        bu1 = (Button)findViewById(R.id.b1);
-        appendText("test ");
-        System.out.println(text);
     }
 
     public void b2(View view){
-        bu2 = (Button)findViewById(R.id.b2);
-        appendText(bu2.getText().toString());
-        submitText();
-        text = "";
     }
 
     public void b3(View view){
-        bu2 = (Button)findViewById(R.id.b3);
     }
 
     public void b4(View view){
-        bu2 = (Button)findViewById(R.id.b4);
     }
 
     public void b5(View view){
-        bu2 = (Button)findViewById(R.id.b5);
     }
 
     public void b6(View view){
-        bu2 = (Button)findViewById(R.id.b6);
     }
 
     public void b7(View view){
-        bu2 = (Button)findViewById(R.id.b7);
     }
 
     public void b8(View view){
-        bu2 = (Button)findViewById(R.id.b8);
     }
 
     public void b9(View view){
-        bu2 = (Button)findViewById(R.id.b9);
     }
 }
