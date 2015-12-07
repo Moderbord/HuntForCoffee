@@ -20,9 +20,9 @@ public class EventClass {
         main.appendText("We hope you brought lotion.");
         main.submitText();
 
-        main.eventManager.toggleButtons(1);
+        main.ui.toggleButtons(1);
         main.button0.setText("Lotion");
-        main.eventManager.toggleButtons(2);
+        main.ui.toggleButtons(2);
 
     }
 

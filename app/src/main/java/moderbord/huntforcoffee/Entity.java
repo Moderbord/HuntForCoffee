@@ -16,10 +16,10 @@ public class Entity {
     }
 
     private String eName, eClass, eRace, eFaction;
-    private int eLevel, ePhysique, eIntellect, eAgility, eQuickness, eCharisma, eLuck, eLi, eMaxHealth, eHealth, eMaxMana, eMana, eMaxFatigue, eFatigue, eExperience, eExpToLvl;
+    private int eLevel, ePhysique, eIntellect, eAgility, eQuickness, eCharisma, eLuck, eLi, eMaxHealth, eHealth, eMaxMana, eMana, eMaxFatigue, eFatigue, eLu, eMinLu, eExperience, eExpToLvl;
 
 
-    public Entity(String eName, String eClass, String eRace, String eFaction, int eLevel, int ePhysique, int eIntellect, int eAgility, int eQuickness, int eCharisma, int eLuck, int eLi, int eMaxHealth, int eHealth, int eMaxMana, int eMana, int eMaxFatigue, int eFatigue, int eExperience, int eExpToLvl){
+    public Entity(String eName, String eClass, String eRace, String eFaction, int eLevel, int ePhysique, int eIntellect, int eAgility, int eQuickness, int eCharisma, int eLuck, int eLi, int eMaxHealth, int eHealth, int eMaxMana, int eMana, int eMaxFatigue, int eFatigue, int eLu, int eMinLu, int eExperience, int eExpToLvl){
         this.eName = eName;
         this.eClass = eClass;
         this.eRace = eRace;
@@ -38,6 +38,8 @@ public class Entity {
         this.eMana = eMana;
         this.eMaxFatigue = eMaxFatigue;
         this.eFatigue = eFatigue;
+        this.eLu = eLu;
+        this.eMinLu = eMinLu;
         this.eExperience = eExperience;
         this.eExpToLvl = eExpToLvl;
     }
@@ -184,6 +186,22 @@ public class Entity {
 
     public void seteFatigue(int eFatigue) {
         this.eFatigue = eFatigue;
+    }
+
+    public int geteLu() {
+        return eLu;
+    }
+
+    public void seteLu(int eLu) {
+        this.eLu = eLu;
+    }
+
+    public int geteMinLu() {
+        return eMinLu;
+    }
+
+    public void seteMinLu(int eMinLu) {
+        this.eMinLu = eMinLu;
     }
 
     public int geteExperience() {
