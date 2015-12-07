@@ -48,10 +48,45 @@ public class CharCreation {
             main.nameInput.setVisibility(View.GONE);
             System.out.println("Removed input window");
 
-            main.appendText("Well well, aren't you a peculiar one, " + tempName + "?");
-            main.appendText("\n\nAt the moment this is as far as we go. Please check back at a later date.");
+            String capName = tempName.substring(0, 1).toUpperCase() + tempName.substring(1);
+            main.player.seteName(capName);
+
+            main.appendText("Well well, aren't you a peculiar one " + main.player.geteName() + ".");
             main.submitText();
+            main.appendInfo(main.player.geteName() + " huh? Not sure if I like it or not");
+            main.submitInfo();
+
+            main.eventManager.addNextEvent("ccPartFour");
         }
     }
 
+    public void ccPartFour(){
+        System.out.println("CCPARTFOUR from CharacterCreation here!");
+        main.eventManager.toggleButtons(1);
+        main.button0.setText("Warrior");
+        main.button1.setText("Druid");
+        main.button2.setText("Spellbinder");
+        main.eventManager.toggleButtons(2);
+
+        main.appendText("Time to choose class!");
+        main.submitText();
+
+        main.eventManager.addNextEvent("ccPartFive");
+    }
+
+    public void ccPartFive(){
+        System.out.println("CCPARTFIVE from CharacterCreation here!");
+
+        String choice = main.eventManager.getEventChoice();
+        main.player.seteClass(choice);
+        main.statClass.setText(choice);
+        main.appendText("So " + choice + " it is huh? Figured.");
+        main.appendText("\n\nAt the moment this is as far as we go. Please check back at a later time.");
+        main.submitText();
+
+        main.eventManager.toggleButtons(1);
+        main.button0.setText("Temp");
+        main.eventManager.toggleButtons(2);
+
+    }
 }

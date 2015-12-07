@@ -3,7 +3,6 @@ package moderbord.huntforcoffee;
 import android.content.Context;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Switch;
 
 /**
  * Created by Moderbord on 2015-12-05.
@@ -11,7 +10,8 @@ import android.widget.Switch;
 public class EventManager {
 
     protected MainActivity main;
-    public static String EventList[] = new String[10];
+    public String eventList[] = new String[10];
+    public String eventChoice;
 
     public EventManager(Context context){
         this.main = (MainActivity) context;
@@ -20,28 +20,29 @@ public class EventManager {
     public void addEvent(Button sender){
         String sText = sender.getText().toString();
         System.out.println(sText + "-button was sender");
-        for (int i = 0; i < EventList.length; i++){
-            if (EventList[i] == null){
+        eventChoice = sText;
+        for (int i = 0; i < eventList.length; i++){
+            if (eventList[i] == null){
                 if (isEvent(sText)){
-                    EventList[i] = sText;
-                    System.out.println(sText + " added to EventList at index " + i);
+                    eventList[i] = sText;
+                    System.out.println(sText + " added to eventList at index " + i);
                     break;
                 } else {
                 System.out.println("No event was added from sender");
                     break;
                 }
             } else {
-                System.out.println("EventList at index " + i + " was occupied by event: " + EventList[i]);
+                System.out.println("eventList at index " + i + " was occupied by event: " + eventList[i]);
             }
         }
         getNextEvent();
     }
 
     public void addNextEvent(String event){
-        for (int i = 0; i < EventList.length; i++){
-            if (EventList[i] == null){
-                EventList[i] = event;
-                System.out.println(event + " added to EventList at index " + i);
+        for (int i = 0; i < eventList.length; i++){
+            if (eventList[i] == null){
+                eventList[i] = event;
+                System.out.println(event + " added to eventList at index " + i);
                 return;
 
             }
@@ -49,7 +50,7 @@ public class EventManager {
     }
 
     public void getNextEvent(){
-        String event = EventList[0];
+        String event = eventList[0];
         System.out.println("Try to match event");
         if (event.equals("ccPartOne")){
             System.out.println("Matched " + event + "...");
@@ -60,30 +61,41 @@ public class EventManager {
         } else if (event.equals("ccPartThree")){
             System.out.println("Matched " + event + "...");
             main.charCreation.ccPartThree();
+        } else if (event.equals("ccPartFour")){
+            System.out.println("Matched " + event + "...");
+            main.charCreation.ccPartFour();
+        } else if (event.equals("ccPartFive")){
+            System.out.println("Matched " + event + "...");
+            main.charCreation.ccPartFive();
         } else {
             System.out.println("No matching event. Continuing...");
             // Add return here??
         }
         System.out.println("Removing " + event + " from Eventlist index 0...");
-        EventList[0] = null;
+        eventList[0] = null;
         System.out.println("Event removed. Sorting list...");
         sortEventlist();
     }
 
     public void sortEventlist(){
-        for(int i = 0; i < EventList.length; i++){
+        for(int i = 0; i < eventList.length; i++){
             int z = i + 1;
-            if(EventList[i] == null && EventList[z] != null){
-                EventList[i] = EventList[z];
-                EventList[z] = null;
-                System.out.println(EventList[i] + " is now at index " + i + " from index " + z);
+            if(eventList[i] == null && eventList[z] != null){
+                eventList[i] = eventList[z];
+                eventList[z] = null;
+                System.out.println(eventList[i] + " is now at index " + i + " from index " + z);
             } else {
-                System.out.println("EventList sorted");
+                System.out.println("eventList sorted");
                 return;
             }
         }
     }
 
+    /**
+     *
+     * @param x Acts as a switch for different button resets. 1 will clear each button of its
+     *          text. 2 will check each button if it contains text and will otherwise hide it.
+     */
     public void toggleButtons(int x){
         Button buttonList[] = new Button[10];
         buttonList[0] = main.button0;
@@ -111,6 +123,10 @@ public class EventManager {
             }
             System.out.println("Button text reset");
         }
+    }
+
+    public String getEventChoice(){
+        return eventChoice;
     }
 
     public boolean isEvent(String event){

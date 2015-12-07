@@ -9,14 +9,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import moderbord.huntforcoffee.Enteties.Player;
+
 public class MainActivity extends Activity {
 
     public EventManager eventManager = new EventManager(this);
     public EventClass eventClass = new EventClass(this);
     public CharCreation charCreation = new CharCreation(this);
+    public Player player = new Player(null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 
-    TextView mainTextWindow, subTextWindow, statStr, statInt, statAgi, statQui, statCha, statLuck, statLi, statHealth, statMana, statFatigue, statLu, statLvl, statClass, timeClock, timeDate;
+    TextView mainTextWindow, subTextWindow, statPhy, statInt, statAgi, statQui, statCha, statLuck, statLi, statHealth, statMana, statFatigue, statLu, statLvl, statClass, timeClock, timeDate;
     Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9;
     EditText nameInput;
     String text = "", info = "";
@@ -28,7 +31,7 @@ public class MainActivity extends Activity {
 
         mainTextWindow = (TextView)findViewById(R.id.mainTextWindow);
         subTextWindow = (TextView)findViewById(R.id.subTextWindow);
-        statStr = (TextView)findViewById(R.id.statStr);
+        statPhy = (TextView)findViewById(R.id.statPhy);
         statInt = (TextView)findViewById(R.id.statInt);
         statAgi = (TextView)findViewById(R.id.statAgi);
         statQui = (TextView)findViewById(R.id.statQui);
@@ -82,29 +85,38 @@ public class MainActivity extends Activity {
     }
 
     public void b1(View view){
+        eventManager.addEvent(button1);
     }
 
     public void b2(View view){
+        eventManager.addEvent(button2);
     }
 
     public void b3(View view){
+        eventManager.addEvent(button3);
     }
 
     public void b4(View view){
+        eventManager.addEvent(button4);
     }
 
     public void b5(View view){
+        eventManager.addEvent(button5);
     }
 
     public void b6(View view){
+        eventManager.addEvent(button6);
     }
 
     public void b7(View view){
+        eventManager.addEvent(button7);
     }
 
     public void b8(View view){
+        eventManager.addEvent(button8);
     }
 
     public void b9(View view){
+        eventManager.addEvent(button9);
     }
 }

@@ -11,8 +11,8 @@
     <string name="b7_string"></string>
     <string name="b8_string"></string>
     <string name="b9_string"></string>
-    <string name="statStr_string">Strength **</string>
-    <string name="statInt_string">Intelligence **</string>
+    <string name="statPhy_string">Physique **</string>
+    <string name="statInt_string">Intellect **</string>
     <string name="statAgi_string">Agility **</string>
     <string name="statQui">Quickness **</string>
     <string name="statCha">Charisma **</string>
@@ -23,7 +23,7 @@
     <string name="statFatigue_string">Fatigue **</string>
     <string name="statLu_string">Lu **</string>
     <string name="statLvl_string">Level *</string>
-    <string name="statClass_string">Warrior</string>
-    <string name="mainText_string">Good day fine hero!\n\nYou will proceed by creating yourself in a few short steps momentarily. But first I would like to take a moment and talk about god...</string>
+    <string name="statClass_string">Class *</string>
+    <string name="mainText_string">Good day fine hero!\n\nYou will proceed by creating yourself momentarily. But first I would like to take a moment and talk about god...</string>
     <string name="subText_string">What should I put here</string>
 </resources>
