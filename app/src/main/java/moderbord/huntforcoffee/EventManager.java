@@ -67,6 +67,12 @@ public class EventManager {
         } else if (event.equals("ccPartFive")){
             System.out.println("Matched " + event + "...");
             main.charCreation.ccPartFive();
+        } else if (event.equals("ccPartSix")){
+            System.out.println("Matched " + event + "...");
+            main.charCreation.ccPartSix();
+        } else if (event.equals("ccPartSeven")){
+            System.out.println("Matched " + event + "...");
+            main.charCreation.ccPartSeven();
         } else {
             System.out.println("No matching event. Continuing...");
             // Add return here??

@@ -15,12 +15,13 @@ public class Entity {
         this.main = (MainActivity) context;
     }
 
-    private String eName, eClass, eRace, eFaction;
+    private String eName, eGender, eClass, eRace, eFaction;
     private int eLevel, ePhysique, eIntellect, eAgility, eQuickness, eCharisma, eLuck, eLi, eMaxHealth, eHealth, eMaxMana, eMana, eMaxFatigue, eFatigue, eLu, eMinLu, eExperience, eExpToLvl;
 
 
-    public Entity(String eName, String eClass, String eRace, String eFaction, int eLevel, int ePhysique, int eIntellect, int eAgility, int eQuickness, int eCharisma, int eLuck, int eLi, int eMaxHealth, int eHealth, int eMaxMana, int eMana, int eMaxFatigue, int eFatigue, int eLu, int eMinLu, int eExperience, int eExpToLvl){
+    public Entity(String eName, String eGender, String eClass, String eRace, String eFaction, int eLevel, int ePhysique, int eIntellect, int eAgility, int eQuickness, int eCharisma, int eLuck, int eLi, int eMaxHealth, int eHealth, int eMaxMana, int eMana, int eMaxFatigue, int eFatigue, int eLu, int eMinLu, int eExperience, int eExpToLvl){
         this.eName = eName;
+        this.eGender = eGender;
         this.eClass = eClass;
         this.eRace = eRace;
         this.eFaction = eFaction;
@@ -50,6 +51,14 @@ public class Entity {
 
     public void seteName(String eName) {
         this.eName = eName;
+    }
+
+    public String geteGender() {
+        return eGender;
+    }
+
+    public void seteGender(String eGender) {
+        this.eGender = eGender;
     }
 
     public String geteClass() {

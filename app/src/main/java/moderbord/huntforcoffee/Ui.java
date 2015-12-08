@@ -53,12 +53,19 @@ public class Ui extends Activity{
         }
     }
 
+    public void updateStatsAll(Player player){
+        updateLevel(player);
+        updateClass(player);
+        updateStats(player);
+        updateState(player);
+    }
+
     public void updateLevel(Player player){
         main.statLvl.setText("Level " + player.geteLevel());
     }
 
     public void updateClass(Player player){
-        main.statClass.setText(player.geteClass());
+        main.statClass.setText(toUp(player.geteClass()));
     }
 
     public void updateStats(Player player){
@@ -78,5 +85,12 @@ public class Ui extends Activity{
         main.statLu.setText("Lu " + player.geteLu());
     }
 
+    public String toUp(String str){
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
+    }
+
+    public String toLow(String str){
+        return str.substring(0, 1).toLowerCase() + str.substring(1);
+    }
 
 }

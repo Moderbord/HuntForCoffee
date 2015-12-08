@@ -17,7 +17,7 @@ public class MainActivity extends Activity {
     public EventClass eventClass = new EventClass(this);
     public CharCreation charCreation = new CharCreation(this);
     public Ui ui = new Ui(this);
-    public Player player = new Player(null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    public Player player = new Player(null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 
     TextView mainTextWindow, subTextWindow, statPhy, statInt, statAgi, statQui, statCha, statLuck, statLi, statHealth, statMana, statFatigue, statLu, statLvl, statClass, timeClock, timeDate;
