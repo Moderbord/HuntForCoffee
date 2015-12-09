@@ -15,14 +15,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/b3"
-        android:layout_above="@+id/b0"
         android:background="@drawable/textborder"
-        android:layout_marginBottom="5dp"
         android:layout_marginRight="2dp"
-        android:layout_toEndOf="@+id/statQui"
         android:id="@+id/scrollView"
-        android:layout_alignStart="@+id/b0">
+        android:layout_marginLeft="28sp"
+        android:layout_toRightOf="@+id/statQui"
+        android:layout_toLeftOf="@+id/scrollView2"
+        android:layout_above="@+id/linearLayout"
+        android:layout_marginBottom="5sp"
+        android:fillViewport="false">
 
         <TextView
             android:layout_width="wrap_content"
@@ -48,21 +49,26 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/nameInput"
-        android:layout_below="@+id/statCha"
-        android:layout_centerHorizontal="true"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:textSize="12sp"
-        android:typeface="serif" />
+        android:typeface="serif"
+        android:hint="Name..."
+        android:layout_alignStart="@+id/scrollView"
+        android:layout_marginTop="85dp"
+        android:layout_marginLeft="6sp" />
 
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/b4"
-        android:layout_above="@+id/b4"
-        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignParentEnd="false"
         android:layout_marginBottom="5dp"
         android:background="@drawable/textborder"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:id="@+id/scrollView2"
+        android:layout_alignParentRight="true"
+        android:fillViewport="false"
+        android:minWidth="115sp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -78,138 +84,170 @@
             android:paddingTop="5dp"
             android:paddingRight="5dp"
             android:paddingBottom="3dp"
-            android:paddingLeft="2dp" />
+            android:paddingLeft="2dp"
+            android:maxWidth="115sp" />
 
     </ScrollView>
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="35sp"
-        android:text="@string/b0_string"
-        android:id="@+id/b0"
-        android:textSize="12sp"
-        android:minWidth="100sp"
-        android:layout_above="@+id/b6"
-        android:layout_toStartOf="@+id/b1"
-        android:onClick="b0" />
+        android:id="@+id/linearLayout"
+        android:layout_above="@+id/linearLayout2"
+        android:layout_alignStart="@+id/linearLayout2">
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="35sp"
-        android:text="@string/b1_string"
-        android:id="@+id/b1"
-        android:textSize="12sp"
-        android:minWidth="100sp"
-        android:layout_above="@+id/b6"
-        android:layout_toStartOf="@+id/b2"
-        android:onClick="b1"
-        android:visibility="invisible" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:text="@string/b0_string"
+            android:id="@+id/b0"
+            android:textSize="12sp"
+            android:onClick="b0"
+            android:layout_above="@+id/b5"
+            android:visibility="visible"
+            android:layout_alignLeft="@+id/b5"
+            android:layout_weight="0.2"
+            android:maxWidth="15sp" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="35sp"
-        android:text="@string/b2_string"
-        android:id="@+id/b2"
-        android:textSize="12sp"
-        android:minWidth="100sp"
-        android:layout_above="@+id/b7"
-        android:layout_toStartOf="@+id/b3"
-        android:onClick="b2"
-        android:visibility="invisible" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:text="@string/b1_string"
+            android:id="@+id/b1"
+            android:textSize="12sp"
+            android:onClick="b1"
+            android:visibility="invisible"
+            android:layout_alignBottom="@+id/b2"
+            android:layout_toLeftOf="@+id/b2"
+            android:layout_toStartOf="@id/b2"
+            android:layout_weight="0.2"
+            android:maxWidth="15sp" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="35sp"
-        android:text="@string/b3_string"
-        android:id="@+id/b3"
-        android:textSize="12sp"
-        android:minWidth="100sp"
-        android:layout_above="@+id/b7"
-        android:layout_toEndOf="@+id/b7"
-        android:onClick="b3"
-        android:visibility="invisible" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:text="@string/b2_string"
+            android:id="@+id/b2"
+            android:textSize="12sp"
+            android:onClick="b2"
+            android:visibility="invisible"
+            android:layout_alignBottom="@+id/b3"
+            android:layout_toLeftOf="@+id/b3"
+            android:layout_weight="0.2"
+            android:maxWidth="15sp" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="35sp"
-        android:text="@string/b4_string"
-        android:id="@+id/b4"
-        android:textSize="12sp"
-        android:minWidth="100sp"
-        android:layout_above="@+id/b9"
-        android:layout_alignParentEnd="true"
-        android:onClick="b4"
-        android:visibility="invisible" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:text="@string/b3_string"
+            android:id="@+id/b3"
+            android:textSize="12sp"
+            android:onClick="b3"
+            android:visibility="invisible"
+            android:layout_toLeftOf="@+id/b4"
+            android:layout_alignBottom="@+id/b4"
+            android:layout_weight="0.2"
+            android:maxWidth="15sp" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:text="@string/b4_string"
+            android:id="@+id/b4"
+            android:textSize="12sp"
+            android:onClick="b4"
+            android:visibility="invisible"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_above="@+id/b9"
+            android:layout_weight="0.2"
+            android:maxWidth="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="35sp"
-        android:text="@string/b5_string"
-        android:id="@+id/b5"
-        android:textSize="12sp"
-        android:minWidth="100sp"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/b6"
-        android:onClick="b5"
-        android:visibility="invisible" />
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/timeDate"
+        android:layout_marginLeft="40sp"
+        android:id="@+id/linearLayout2">
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="35sp"
-        android:text="@string/b6_string"
-        android:id="@+id/b6"
-        android:textSize="12sp"
-        android:minWidth="100sp"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/b7"
-        android:onClick="b6"
-        android:visibility="invisible" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:text="@string/b5_string"
+            android:id="@+id/b5"
+            android:textSize="12sp"
+            android:onClick="b5"
+            android:visibility="invisible"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/timeDate"
+            android:layout_weight="0.2" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="35sp"
-        android:text="@string/b7_string"
-        android:id="@+id/b7"
-        android:textSize="12sp"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/b8"
-        android:minWidth="100sp"
-        android:onClick="b7"
-        android:visibility="invisible" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:text="@string/b6_string"
+            android:id="@+id/b6"
+            android:textSize="12sp"
+            android:layout_alignParentBottom="true"
+            android:onClick="b6"
+            android:visibility="invisible"
+            android:layout_toLeftOf="@+id/b7"
+            android:layout_weight="0.2" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="35sp"
-        android:text="@string/b8_string"
-        android:id="@+id/b8"
-        android:textSize="12sp"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/b9"
-        android:minWidth="100sp"
-        android:onClick="b8"
-        android:visibility="invisible" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:text="@string/b7_string"
+            android:id="@+id/b7"
+            android:textSize="12sp"
+            android:layout_alignParentBottom="true"
+            android:onClick="b7"
+            android:visibility="invisible"
+            android:layout_alignParentStart="false"
+            android:layout_toLeftOf="@+id/b8"
+            android:layout_weight="0.2" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="35sp"
-        android:text="@string/b9_string"
-        android:id="@+id/b9"
-        android:textSize="12sp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:minWidth="100sp"
-        android:onClick="b9"
-        android:visibility="invisible" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:text="@string/b8_string"
+            android:id="@+id/b8"
+            android:textSize="12sp"
+            android:onClick="b8"
+            android:visibility="invisible"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/b9"
+            android:layout_weight="0.2" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:text="@string/b9_string"
+            android:id="@+id/b9"
+            android:textSize="12sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="false"
+            android:onClick="b9"
+            android:visibility="invisible"
+            android:layout_alignParentRight="true"
+            android:layout_weight="0.2" />
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"

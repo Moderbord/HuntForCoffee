@@ -103,7 +103,7 @@ public class CharCreation {
             class1 = "Ranger"; class2 = "Spellbinder"; class3 = "Duelist";
         } else if (race.equals("Orc")){
             System.out.println("Showing orc classes");
-            class1 = "Berserk"; class2 = "Shaman"; class3 = "Pack master";
+            class1 = "Berserk"; class2 = "Shaman"; class3 = "Packmaster";
         } else {
             System.out.println("Showing elf classes");
             class1 = "Sentinel"; class2 = "Farseer"; class3 = "Druid";
@@ -132,9 +132,9 @@ public class CharCreation {
         if(main.player.geteRace().equals("human")){
             cho1 = "Protectors"; cho2 = "Factionless"; cho3 = "Demonic";
         } else if (main.player.geteRace().equals("orc")){
-            cho1 = "War"; cho2 = "Undaunted"; cho3 = "Demonic";
+            cho1 = "Protectors"; cho2 = "Undaunted"; cho3 = "Demonic";
         } else {
-            cho1 = "Deviant"; cho2 = "Stalkers"; cho3 = "Unholy";
+            cho1 = "Protectors"; cho2 = "Devaint"; cho3 = "Demonic";
         }
         main.button0.setText(cho1);
         main.button1.setText(cho2);
@@ -146,17 +146,27 @@ public class CharCreation {
 
     public void ccPartSeven(){
         System.out.println("CCPARTSEVEN from CharacterCreation here!");
-        String eClass = main.player.geteClass();
+        String faction = main.eventManager.getEventChoice();
+        main.player.seteFaction(faction);
+        if(faction.equals("Factionless")){
+            main.appendText("You decided to be a factionless human? How pitiful.");
+        } else if (faction.equals("Demonic")){
+            main.appendText("A demon huh? Your journey will become interesting to say the least");
+        } else {
+            main.appendText("You are one of the " + faction + " you say? Will you do your best?");
+        }
 
-        main.appendText("\n\nAt the moment this is as far as we go. Please check back at a later time.");
+        main.appendText("\n\nThis concludes character creation.");
+        main.appendText("\n\nHave fun!");
         main.submitText();
 
+        String eClass = main.player.geteClass();
         int phy, eInt, agi, qui, cha, luck, li, health, mana;
         System.out.println("Matching class...");
         if(eClass.equals("ranger") || eClass.equals("berserk") || eClass.equals("sentinel")){
             System.out.println("Found " + eClass);
             phy = 30; eInt = 10; agi = 15; qui = 15; cha = 20; luck = 10; li = 10; health = 200; mana = 20;
-        } else if (eClass.equals("duelist") || eClass.equals("pack master") || eClass.equals("druid")){
+        } else if (eClass.equals("duelist") || eClass.equals("packmaster") || eClass.equals("druid")){
             System.out.println("Found " + eClass);
             phy = 20; eInt = 20; agi = 25; qui = 30; cha = 15; luck = 10; li = 10; health = 130; mana = 60;
         } else if (eClass.equals("spellbinder") || eClass.equals("shaman") || eClass.equals("farseer")){
@@ -167,7 +177,7 @@ public class CharCreation {
             phy = 0; eInt = 0; agi = 0; qui = 0; cha = 0; luck = 0; li = 0; health = 0; mana = 0;
         }
 
-        System.out.println("Updating UI stats..");
+        System.out.println("Updating UI and player stats..");
         try {
             main.player.seteLevel(1);
             main.player.setePhysique(phy);
@@ -194,7 +204,7 @@ public class CharCreation {
         }
 
         main.ui.toggleButtons(1);
-        main.button0.setText("Temp");
+        main.button0.setText("Begin...");
         main.ui.toggleButtons(2);
 
     }
