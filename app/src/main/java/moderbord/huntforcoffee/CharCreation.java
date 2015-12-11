@@ -15,15 +15,15 @@ public class CharCreation {
         this.main = (MainActivity) context;
     }
 
-    public void ccPartOne(){
+    public void ccPartOne(){ //10000
         System.out.println("CCPARTONE from CharacterCreation here!");
         main.appendText("So this is where your journey will start");
         main.submitText();
 
-        main.eventManager.addNextEvent("ccPartTwo");
+        main.eventManager.addNextEvent("ccPartTwo" ,10000);
     }
 
-    public void ccPartTwo(){
+    public void ccPartTwo(){ //20000
         System.out.println("CCPARTTWO from CharacterCreation here!");
         main.appendText("We will begin by getting to know your name");
         main.submitText();
@@ -32,17 +32,17 @@ public class CharCreation {
 
         main.nameInput.setVisibility(View.VISIBLE);
 
-        main.eventManager.addNextEvent("ccPartThree");
+        main.eventManager.addNextEvent("ccPartThree" ,20000);
     }
 
-    public void ccPartThree(){
+    public void ccPartThree(){ //30000
         System.out.println("CCPARTTHREE from CharacterCreation here!");
         main.nameInput.setVisibility(View.INVISIBLE);
         tempName = main.nameInput.getText().toString();
         if (tempName.length() < 2 || tempName.length() > 16 || tempName.isEmpty() || tempName.matches(".*\\d.*")){
             main.appendText("Try entering a better name");
             main.submitText();
-            main.eventManager.addNextEvent("ccPartTwo");
+            main.eventManager.addNextEvent("ccPartTwo" ,30000);
         } else {
             System.out.println("Good choice of name detected");
             main.nameInput.setVisibility(View.GONE);
@@ -63,11 +63,11 @@ public class CharCreation {
             main.button1.setText("Female");
             main.ui.toggleButtons(2);
 
-            main.eventManager.addNextEvent("ccPartFour");
+            main.eventManager.addNextEvent("ccPartFour" ,30000);
         }
     }
 
-    public void ccPartFour(){
+    public void ccPartFour(){ //40000
         System.out.println("CCPARTFOUR from CharacterCreation here!");
         String gender = main.eventManager.getEventChoice();
         main.player.seteGender(main.ui.toLow(gender));
@@ -84,10 +84,10 @@ public class CharCreation {
         main.button2.setText("Elf");
         main.ui.toggleButtons(2);
 
-        main.eventManager.addNextEvent("ccPartFive");
+        main.eventManager.addNextEvent("ccPartFive" ,40000);
     }
 
-    public void ccPartFive(){
+    public void ccPartFive(){ //50000
         System.out.println("CCPARTFIVE from CharacterCreation here!");
         String race = main.eventManager.getEventChoice();
         main.player.seteRace(main.ui.toLow(race));
@@ -113,10 +113,10 @@ public class CharCreation {
         main.button2.setText(class3);
         main.ui.toggleButtons(2);
 
-        main.eventManager.addNextEvent("ccPartSix");
+        main.eventManager.addNextEvent("ccPartSix" ,50000);
     }
 
-    public void ccPartSix(){
+    public void ccPartSix(){ //60000
         System.out.println("CCPARTSIX from CharacterCreation here!");
         String eClass = main.eventManager.getEventChoice();
         main.player.seteClass(main.ui.toLow(eClass));
@@ -141,10 +141,10 @@ public class CharCreation {
         main.button2.setText(cho3);
         main.ui.toggleButtons(2);
 
-        main.eventManager.addNextEvent("ccPartSeven");
+        main.eventManager.addNextEvent("ccPartSeven" ,60000);
     }
 
-    public void ccPartSeven(){
+    public void ccPartSeven(){ //70000
         System.out.println("CCPARTSEVEN from CharacterCreation here!");
         String faction = main.eventManager.getEventChoice();
         main.player.seteFaction(faction);
@@ -153,12 +153,15 @@ public class CharCreation {
         } else if (faction.equals("Demonic")){
             main.appendText("A demon huh? Your journey will become interesting to say the least");
         } else {
-            main.appendText("You are one of the " + faction + " you say? Will you do your best?");
+            main.appendText("You are one of the " + faction + ". Will you do your best?");
         }
 
         main.appendText("\n\nThis concludes character creation.");
         main.appendText("\n\nHave fun!");
         main.submitText();
+
+        main.appendInfo("Good job!");
+        main.submitInfo();
 
         String eClass = main.player.geteClass();
         int phy, eInt, agi, qui, cha, luck, li, health, mana;
@@ -202,6 +205,8 @@ public class CharCreation {
             String error = e.getMessage();
             System.out.println(error);
         }
+
+        main.eventManager.addNextEvent("introGood" ,70000);
 
         main.ui.toggleButtons(1);
         main.button0.setText("Begin...");

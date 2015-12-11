@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
 
 
     TextView mainTextWindow, subTextWindow, statPhy, statInt, statAgi, statQui, statCha, statLuck, statLi, statHealth, statMana, statFatigue, statLu, statLvl, statClass, timeClock, timeDate;
-    Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9;
+    public Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9;
     EditText nameInput;
     String text = "", info = "";
 
@@ -60,7 +60,7 @@ public class MainActivity extends Activity {
         button9 = (Button)findViewById(R.id.b9);
 
         nameInput = (EditText)findViewById(R.id.nameInput);
-        eventManager.addNextEvent("ccPartOne");
+        eventManager.addNextEvent("ccPartOne", 0);
     }
 
     public void appendText(String append){

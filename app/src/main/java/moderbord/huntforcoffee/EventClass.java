@@ -14,6 +14,21 @@ public class EventClass {
         this.main = (MainActivity) context;
     }
 
+    public void introGood(){ //80000
+        System.out.println("INTROGOOD from EventClass here!");
+        main.appendText("You arrive back to your small encampment which consists of a simple tent and a cooking pot hanging above a fireplace.");
+        main.appendText("\n\nThe forrest is all around you.");
+        main.appendText("\n\nWhat do you feel like doing now?");
+        main.submitText();
+
+        main.ui.toggleButtons(1);
+        main.button0.setText("Forrest");
+        main.button9.setText("Hero");
+        main.ui.toggleButtons(2);
+
+        main.eventManager.setCaller(80000);
+    }
+
     public void getForrest(){
         System.out.println("FORREST from EventClass here!");
         main.appendText("Welcome to the jungle!");
@@ -21,7 +36,7 @@ public class EventClass {
         main.submitText();
 
         main.ui.toggleButtons(1);
-        main.button0.setText("Lotion");
+        main.button0.setText("Back");
         main.ui.toggleButtons(2);
 
     }
