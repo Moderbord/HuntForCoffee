@@ -9,129 +9,90 @@ import android.widget.Button;
 public class EventManager {
 
     protected MainActivity main;
-    public String eventList[] = new String[10];
+    public int eventList[] = new int[10];
     public String eventChoice;
-    public int caller;
 
     public EventManager(Context context){
         this.main = (MainActivity) context;
     }
 
-    public void addEvent(Button sender){
-        String sText = sender.getText().toString();
-        System.out.println(sText + "-button was sender");
-        eventChoice = sText;
-        for (int i = 0; i < eventList.length; i++){
-            if (eventList[i] == null){
-                if (isEvent(sText)){
-                    eventList[i] = sText;
-                    System.out.println(sText + " added to eventList at index " + i);
-                    break;
-                } else {
-                System.out.println("No event was added from sender");
-                    break;
-                }
+    /**
+     *
+     * @param text The text that will appear on the button.
+     * @param eventID ID of the event to be added in the prepList.
+     * @param button On which button, 0-9.
+     */
+    public void prepEvent(String text, int eventID, int button){
+        eventChoice = text;
+        Button receiver = main.attachButton(button);
+        receiver.setText(text);
+        addNextEvent(button, eventID);
+    }
+
+    public void getNextEvent(int bIndex){
+        if (eventList[bIndex] != 0){
+            System.out.println("Try to match event with ID: " + eventList[bIndex] + " with index: " + bIndex);
+
+            if (eventList[bIndex] == 99991){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.charCreation.ccPartOne();
+
+            } else if (eventList[bIndex] == 99992){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.charCreation.ccPartTwo();
+
+            } else if (eventList[bIndex] == 99993){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.charCreation.ccPartThree();
+
+            } else if (eventList[bIndex] == 99994){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.charCreation.ccPartFour();
+
+            } else if (eventList[bIndex] == 99995){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.charCreation.ccPartFive();
+
+            } else if (eventList[bIndex] == 99996){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.charCreation.ccPartSix();
+
+            } else if (eventList[bIndex] == 99997){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.charCreation.ccPartSeven();
+
+            } else if (eventList[bIndex] == 99980){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.eventClass.introGood();
+
+            } else if (eventList[bIndex] == 11111){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.player.info();
+
+            } else if (eventList[bIndex] == 10001){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.eventClass.getForrest();
+
             } else {
-                System.out.println("eventList at index " + i + " was occupied by event: " + eventList[i]);
-            }
-        }
-        getNextEvent();
-    }
-
-    public void addNextEvent(String event, int caller){
-        this.caller = caller;
-        for (int i = 0; i < eventList.length; i++){
-            if (eventList[i] == null){
-                eventList[i] = event;
-                System.out.println(event + " added to eventList at index " + i);
-                return;
-
-            }
-        }
-    }
-
-    public void getNextEvent(){
-        String event = eventList[0];
-        System.out.println("Try to match event");
-
-        if (event.equals("ccPartOne")){
-            System.out.println("Matched " + event + "...");
-            main.charCreation.ccPartOne();
-
-        } else if (event.equals("ccPartTwo")){
-            System.out.println("Matched " + event + "...");
-            main.charCreation.ccPartTwo();
-
-        } else if (event.equals("ccPartThree")){
-            System.out.println("Matched " + event + "...");
-            main.charCreation.ccPartThree();
-
-        } else if (event.equals("ccPartFour")){
-            System.out.println("Matched " + event + "...");
-            main.charCreation.ccPartFour();
-
-        } else if (event.equals("ccPartFive")){
-            System.out.println("Matched " + event + "...");
-            main.charCreation.ccPartFive();
-
-        } else if (event.equals("ccPartSix")){
-            System.out.println("Matched " + event + "...");
-            main.charCreation.ccPartSix();
-
-        } else if (event.equals("ccPartSeven")){
-            System.out.println("Matched " + event + "...");
-            main.charCreation.ccPartSeven();
-
-        } else if (event.equals("introGood")){
-            System.out.println("Matched " + event + "...");
-            main.charCreation.ccPartSeven();
-
-        } else if (event.equals("Forrest") && caller == 80000){
-            System.out.println("Matched " + event + " with caller: " + "80000...");
-            main.eventClass.getForrest();
-
-        } else if (event.equals("Hero") && caller == 80000){
-            System.out.println("Matched " + event + " with caller: " + "80000...");
-            main.eventClass.getForrest();
-
-        } else {
-            System.out.println("No matching event. Continuing...");
-            // Add return here??
-        }
-        System.out.println("Removing " + event + " from Eventlist index 0...");
-        eventList[0] = null;
-        System.out.println("Event removed. Sorting list...");
-        sortEventlist();
-    }
-
-    public void sortEventlist(){
-        for(int i = 0; i < eventList.length; i++){
-            int z = i + 1;
-            if(eventList[i] == null && eventList[z] != null){
-                eventList[i] = eventList[z];
-                eventList[z] = null;
-                System.out.println(eventList[i] + " is now at index " + i + " from index " + z);
-            } else {
-                System.out.println("eventList sorted");
+                System.out.println("No matching event.");
                 return;
             }
+        }
+    }
+
+    public void addNextEvent(int i, int eventID){
+        eventList[i] = eventID;
+        System.out.println("Event with ID " + eventID + " added to eventList at index " + i);
+    }
+
+    public void clrEventList(){
+        for (int i = 0; i < eventList.length; i++){
+            eventList[i]=0;
         }
     }
 
     public String getEventChoice(){
         return eventChoice;
-    }
-
-    public void setCaller(int i){
-        this.caller = i;
-    }
-
-    public boolean isEvent(String event){
-        if(event.equals("Forrest") || event.equals("Hero")){
-            return true;
-        } else {
-            return false;
-        }
     }
 
 }

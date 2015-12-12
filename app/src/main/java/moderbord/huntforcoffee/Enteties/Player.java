@@ -1,7 +1,5 @@
 package moderbord.huntforcoffee.Enteties;
 
-import android.content.Context;
-
 import moderbord.huntforcoffee.Entity;
 
 /**
@@ -13,13 +11,14 @@ public class Player extends Entity{
         super(eName, eGender, eClass, eRace, eFaction, eLevel, ePhysique, eIntellect, eAgility, eQuickness, eCharisma, eLuck, eLi, eMaxHealth, eHealth, eMaxMana, eMana, eMaxFatigue, eFatigue, eLu, eMinLu, eExperience, eExpToLvl);
     }
 
-    public void tempDisc(){
-        main.appendText("YOU ARE STRONG!");
-        main.submitText();
+    public void info(){ // ID 11111
+        System.out.println("INFO from Player here!");
+        sub.appendText("YOU ARE STRONG!");
+        sub.submitText();
 
-        main.ui.toggleButtons(1);
-        main.button9.setText("Back");
-        main.ui.toggleButtons(2);
+        sub.ui.toggleButtons(1);
+        sub.eventManager.clrEventList();
+        sub.eventManager.prepEvent("Back", 99980, 9);
+        sub.ui.toggleButtons(2);
     }
-
 }

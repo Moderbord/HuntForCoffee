@@ -15,15 +15,16 @@ public class CharCreation {
         this.main = (MainActivity) context;
     }
 
-    public void ccPartOne(){ //10000
+    public void ccPartOne(){ // ID 99991
         System.out.println("CCPARTONE from CharacterCreation here!");
         main.appendText("So this is where your journey will start");
         main.submitText();
 
-        main.eventManager.addNextEvent("ccPartTwo" ,10000);
+        main.eventManager.clrEventList();
+        main.eventManager.prepEvent("Next", 99992, 0);
     }
 
-    public void ccPartTwo(){ //20000
+    public void ccPartTwo(){ // ID 99992
         System.out.println("CCPARTTWO from CharacterCreation here!");
         main.appendText("We will begin by getting to know your name");
         main.submitText();
@@ -32,17 +33,20 @@ public class CharCreation {
 
         main.nameInput.setVisibility(View.VISIBLE);
 
-        main.eventManager.addNextEvent("ccPartThree" ,20000);
+        main.eventManager.clrEventList();
+        main.eventManager.prepEvent("Next", 99993, 0);
     }
 
-    public void ccPartThree(){ //30000
+    public void ccPartThree(){ // ID 99993
         System.out.println("CCPARTTHREE from CharacterCreation here!");
         main.nameInput.setVisibility(View.INVISIBLE);
         tempName = main.nameInput.getText().toString();
-        if (tempName.length() < 2 || tempName.length() > 16 || tempName.isEmpty() || tempName.matches(".*\\d.*")){
+        if (tempName.length() < 2 || tempName.length() > 16 || tempName.isEmpty() || tempName.matches(".*\\d.*")) {
             main.appendText("Try entering a better name");
             main.submitText();
-            main.eventManager.addNextEvent("ccPartTwo" ,30000);
+            main.eventManager.clrEventList();
+            main.eventManager.prepEvent("Next", 99992, 0);
+            return;
         } else {
             System.out.println("Good choice of name detected");
             main.nameInput.setVisibility(View.GONE);
@@ -59,15 +63,14 @@ public class CharCreation {
             main.submitInfo();
 
             main.ui.toggleButtons(1);
-            main.button0.setText("Male");
-            main.button1.setText("Female");
+            main.eventManager.clrEventList();
+            main.eventManager.prepEvent("Male", 99994, 0);
+            main.eventManager.prepEvent("Female", 99994, 1);
             main.ui.toggleButtons(2);
-
-            main.eventManager.addNextEvent("ccPartFour" ,30000);
         }
     }
 
-    public void ccPartFour(){ //40000
+    public void ccPartFour(){ // ID 99994
         System.out.println("CCPARTFOUR from CharacterCreation here!");
         String gender = main.eventManager.getEventChoice();
         main.player.seteGender(main.ui.toLow(gender));
@@ -79,15 +82,15 @@ public class CharCreation {
         main.submitInfo();
 
         main.ui.toggleButtons(1);
-        main.button0.setText("Human");
-        main.button1.setText("Orc");
-        main.button2.setText("Elf");
+        main.eventManager.clrEventList();
+        main.eventManager.prepEvent("Human", 99995, 0);
+        main.eventManager.prepEvent("Orc", 99995, 1);
+        main.eventManager.prepEvent("Elf", 99995, 2);
         main.ui.toggleButtons(2);
 
-        main.eventManager.addNextEvent("ccPartFive" ,40000);
     }
 
-    public void ccPartFive(){ //50000
+    public void ccPartFive(){ // ID 99995
         System.out.println("CCPARTFIVE from CharacterCreation here!");
         String race = main.eventManager.getEventChoice();
         main.player.seteRace(main.ui.toLow(race));
@@ -108,15 +111,14 @@ public class CharCreation {
             System.out.println("Showing elf classes");
             class1 = "Sentinel"; class2 = "Farseer"; class3 = "Druid";
         }
-        main.button0.setText(class1);
-        main.button1.setText(class2);
-        main.button2.setText(class3);
+        main.eventManager.clrEventList();
+        main.eventManager.prepEvent(class1, 99996, 0);
+        main.eventManager.prepEvent(class2, 99996, 1);
+        main.eventManager.prepEvent(class3, 99996, 2);
         main.ui.toggleButtons(2);
-
-        main.eventManager.addNextEvent("ccPartSix" ,50000);
     }
 
-    public void ccPartSix(){ //60000
+    public void ccPartSix(){ // ID 99996
         System.out.println("CCPARTSIX from CharacterCreation here!");
         String eClass = main.eventManager.getEventChoice();
         main.player.seteClass(main.ui.toLow(eClass));
@@ -136,15 +138,14 @@ public class CharCreation {
         } else {
             cho1 = "Protectors"; cho2 = "Devaint"; cho3 = "Demonic";
         }
-        main.button0.setText(cho1);
-        main.button1.setText(cho2);
-        main.button2.setText(cho3);
+        main.eventManager.clrEventList();
+        main.eventManager.prepEvent(cho1, 99997, 0);
+        main.eventManager.prepEvent(cho2, 99997, 1);
+        main.eventManager.prepEvent(cho3, 99997, 2);
         main.ui.toggleButtons(2);
-
-        main.eventManager.addNextEvent("ccPartSeven" ,60000);
     }
 
-    public void ccPartSeven(){ //70000
+    public void ccPartSeven(){ // ID 99997
         System.out.println("CCPARTSEVEN from CharacterCreation here!");
         String faction = main.eventManager.getEventChoice();
         main.player.seteFaction(faction);
@@ -206,10 +207,9 @@ public class CharCreation {
             System.out.println(error);
         }
 
-        main.eventManager.addNextEvent("introGood" ,70000);
-
         main.ui.toggleButtons(1);
-        main.button0.setText("Begin...");
+        main.eventManager.clrEventList();
+        main.eventManager.prepEvent("Begin", 99980, 0);
         main.ui.toggleButtons(2);
 
     }

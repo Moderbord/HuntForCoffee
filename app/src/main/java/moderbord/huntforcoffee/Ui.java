@@ -26,30 +26,25 @@ public class Ui extends Activity{
      */
     public void toggleButtons(int x){
         Button buttonList[] = new Button[10];
-        buttonList[0] = main.button0;
-        buttonList[1] = main.button1;
-        buttonList[2] = main.button2;
-        buttonList[3] = main.button3;
-        buttonList[4] = main.button4;
-        buttonList[5] = main.button5;
-        buttonList[6] = main.button6;
-        buttonList[7] = main.button7;
-        buttonList[8] = main.button8;
-        buttonList[9] = main.button9;
         if (x == 2) {
             for(int i = 0; i < buttonList.length; i++){
+                buttonList[i]=main.attachButton(i);
                 if (buttonList[i].getText().toString().equals("")){
                     buttonList[i].setVisibility(View.INVISIBLE);
+                    System.out.println("Button " + i + " set INVISIBLE");
                 } else {
                     buttonList[i].setVisibility(View.VISIBLE);
+                    System.out.println("Button " + i + " set VISIBLE");
                 }
-                System.out.println("Button visibility reset");
             }
+            System.out.println("ALL BUTTON VISIBILITY RESET");
         } else if (x == 1){
             for(int i = 0; i < buttonList.length; i++){
+                buttonList[i]=main.attachButton(i);
                 buttonList[i].setText("");
+                System.out.println("Button " + i + " TEXT was reset");
             }
-            System.out.println("Button text reset");
+            System.out.println("ALL BUTTON TEXT RESET");
         }
     }
 
