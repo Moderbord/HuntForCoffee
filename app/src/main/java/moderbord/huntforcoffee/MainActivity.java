@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
     public EventClass eventClass = new EventClass(this);
     public CharCreation charCreation = new CharCreation(this);
     public Ui ui = new Ui(this);
+    public Entity entity = new Entity(this);
     public Player player = new Player(null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 
@@ -30,6 +31,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Move to other place?
         mainTextWindow = (TextView)findViewById(R.id.mainTextWindow);
         subTextWindow = (TextView)findViewById(R.id.subTextWindow);
         statPhy = (TextView)findViewById(R.id.statPhy);
@@ -48,19 +50,8 @@ public class MainActivity extends Activity {
         timeClock = (TextView)findViewById(R.id.timeClock);
         timeDate = (TextView)findViewById(R.id.timeDate);
 
-        button0 = (Button)findViewById(R.id.b0);
-        button1 = (Button)findViewById(R.id.b1);
-        button2 = (Button)findViewById(R.id.b2);
-        button3 = (Button)findViewById(R.id.b3);
-        button4 = (Button)findViewById(R.id.b4);
-        button5 = (Button)findViewById(R.id.b5);
-        button6 = (Button)findViewById(R.id.b6);
-        button7 = (Button)findViewById(R.id.b7);
-        button8 = (Button)findViewById(R.id.b8);
-        button9 = (Button)findViewById(R.id.b9);
-
         nameInput = (EditText)findViewById(R.id.nameInput);
-        eventManager.addNextEvent("ccPartOne", 0);
+        eventManager.addNextEvent(0, 99991); //ccPartOne
     }
 
     public void appendText(String append){
@@ -81,43 +72,60 @@ public class MainActivity extends Activity {
         info = "";
     }
 
-    public void b0(View view){
-        eventManager.addEvent(button0);
+    public void buttonClick(View view){
+        Button b = (Button)view;
+        int id = Integer.parseInt(b.getTag().toString());
+        eventManager.getNextEvent(id);
     }
 
-    public void b1(View view){
-        eventManager.addEvent(button1);
-    }
-
-    public void b2(View view){
-        eventManager.addEvent(button2);
-    }
-
-    public void b3(View view){
-        eventManager.addEvent(button3);
-    }
-
-    public void b4(View view){
-        eventManager.addEvent(button4);
-    }
-
-    public void b5(View view){
-        eventManager.addEvent(button5);
-    }
-
-    public void b6(View view){
-        eventManager.addEvent(button6);
-    }
-
-    public void b7(View view){
-        eventManager.addEvent(button7);
-    }
-
-    public void b8(View view){
-        eventManager.addEvent(button8);
-    }
-
-    public void b9(View view){
-        eventManager.addEvent(button9);
+    public Button attachButton (int i){
+        System.out.println("Attaching button with index: " +i + "...");
+        Button button;
+        switch (i){
+            case 0:
+                button = (Button)findViewById(R.id.b0);
+                System.out.println("..Attached button " +i);
+                break;
+            case 1:
+                button = (Button)findViewById(R.id.b1);
+                System.out.println("..Attached button " +i);
+                break;
+            case 2:
+                button = (Button)findViewById(R.id.b2);
+                System.out.println("..Attached button " +i);
+                break;
+            case 3:
+                button = (Button)findViewById(R.id.b3);
+                System.out.println("..Attached button " +i);
+                break;
+            case 4:
+                button = (Button)findViewById(R.id.b4);
+                System.out.println("..Attached button " +i);
+                break;
+            case 5:
+                button = (Button)findViewById(R.id.b5);
+                System.out.println("..Attached button " +i);
+                break;
+            case 6:
+                button = (Button)findViewById(R.id.b6);
+                System.out.println("..Attached button " +i);
+                break;
+            case 7:
+                button = (Button)findViewById(R.id.b7);
+                System.out.println("..Attached button " +i);
+                break;
+            case 8:
+                button = (Button)findViewById(R.id.b8);
+                System.out.println("..Attached button " +i);
+                break;
+            case 9:
+                button = (Button)findViewById(R.id.b9);
+                System.out.println("..Attached button " +i);
+                break;
+            default:
+                button = (Button)findViewById(R.id.b0);
+                System.out.println("..Attached default button");
+        }
+        return button;
     }
 }
