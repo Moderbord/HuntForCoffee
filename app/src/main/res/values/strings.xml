@@ -24,6 +24,6 @@
     <string name="statLu_string">Lu **</string>
     <string name="statLvl_string">Level *</string>
     <string name="statClass_string">Class *</string>
-    <string name="mainText_string">Good day fine hero!\n\nYou will proceed by creating yourself momentarily. But first I would like to take a moment and talk about god...</string>
-    <string name="subText_string">What should I put here</string>
+    <string name="mainText_string">HUNT FOR COFFEE</string>
+    <string name="subText_string"></string>
 </resources>

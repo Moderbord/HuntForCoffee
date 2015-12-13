@@ -7,19 +7,16 @@ import moderbord.huntforcoffee.Enteties.Player;
 /**
  * Created by Moderbord on 2015-12-07.
  */
-public class Entity {
+public abstract class Entity {
 
     protected MainActivity main;
-
-    public Entity(Context context){
-        this.main = (MainActivity) context;
-    }
 
     private String eName, eGender, eClass, eRace, eFaction;
     private int eLevel, ePhysique, eIntellect, eAgility, eQuickness, eCharisma, eLuck, eLi, eMaxHealth, eHealth, eMaxMana, eMana, eMaxFatigue, eFatigue, eLu, eMinLu, eExperience, eExpToLvl;
 
 
-    public Entity(String eName, String eGender, String eClass, String eRace, String eFaction, int eLevel, int ePhysique, int eIntellect, int eAgility, int eQuickness, int eCharisma, int eLuck, int eLi, int eMaxHealth, int eHealth, int eMaxMana, int eMana, int eMaxFatigue, int eFatigue, int eLu, int eMinLu, int eExperience, int eExpToLvl){
+    public Entity(Context context, String eName, String eGender, String eClass, String eRace, String eFaction, int eLevel, int ePhysique, int eIntellect, int eAgility, int eQuickness, int eCharisma, int eLuck, int eLi, int eMaxHealth, int eHealth, int eMaxMana, int eMana, int eMaxFatigue, int eFatigue, int eLu, int eMinLu, int eExperience, int eExpToLvl){
+        this.main = (MainActivity) context;
         this.eName = eName;
         this.eGender = eGender;
         this.eClass = eClass;
@@ -228,4 +225,6 @@ public class Entity {
     public void seteExpToLvl(int eExpToLvl) {
         this.eExpToLvl = eExpToLvl;
     }
+
+    public abstract void info();
 }

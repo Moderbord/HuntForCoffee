@@ -20,8 +20,10 @@ public class CharCreation {
         main.appendText("So this is where your journey will start");
         main.submitText();
 
+        main.ui.toggleButtons(1);
         main.eventManager.clrEventList();
         main.eventManager.prepEvent("Next", 99992, 0);
+        main.ui.toggleButtons(2);
     }
 
     public void ccPartTwo(){ // ID 99992

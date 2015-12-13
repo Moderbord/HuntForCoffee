@@ -23,13 +23,13 @@ public class EventManager {
      * @param button On which button, 0-9.
      */
     public void prepEvent(String text, int eventID, int button){
-        eventChoice = text;
         Button receiver = main.attachButton(button);
         receiver.setText(text);
         addNextEvent(button, eventID);
     }
 
-    public void getNextEvent(int bIndex){
+    public void getNextEvent(int bIndex, String text){
+        eventChoice = text;
         if (eventList[bIndex] != 0){
             System.out.println("Try to match event with ID: " + eventList[bIndex] + " with index: " + bIndex);
 
@@ -72,6 +72,30 @@ public class EventManager {
             } else if (eventList[bIndex] == 10001){
                 System.out.println("Matched event with ID " + eventList[bIndex] + "...");
                 main.eventClass.getForrest();
+
+            } else if (eventList[bIndex] == 8008){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.saveLoad.mainMenu();
+
+            } else if (eventList[bIndex] == 9000){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.saveLoad.saveGame();
+
+            } else if (eventList[bIndex] == 9001){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.saveLoad.saveGameSlot();
+
+            } else if (eventList[bIndex] == 9002){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.saveLoad.loadGame();
+
+            } else if (eventList[bIndex] == 9003){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.saveLoad.loadGameSlot();
+
+            } else if (eventList[bIndex] == 9099){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.saveLoad.gameOptions();
 
             } else {
                 System.out.println("No matching event.");

@@ -198,7 +198,8 @@
             android:visibility="invisible"
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/timeDate"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.2"
+            android:maxWidth="15sp" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -212,7 +213,8 @@
             android:onClick="buttonClick"
             android:visibility="invisible"
             android:layout_toLeftOf="@+id/b7"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.2"
+            android:maxWidth="15sp" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -227,7 +229,8 @@
             android:visibility="invisible"
             android:layout_alignParentStart="false"
             android:layout_toLeftOf="@+id/b8"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.2"
+            android:maxWidth="15sp" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -241,7 +244,8 @@
             android:visibility="invisible"
             android:layout_alignParentBottom="true"
             android:layout_toLeftOf="@+id/b9"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.2"
+            android:maxWidth="15sp" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -256,7 +260,8 @@
             android:onClick="buttonClick"
             android:visibility="invisible"
             android:layout_alignParentRight="true"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.2"
+            android:maxWidth="15sp" />
     </LinearLayout>
 
     <TextView

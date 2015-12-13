@@ -31,10 +31,10 @@ public class Ui extends Activity{
                 buttonList[i]=main.attachButton(i);
                 if (buttonList[i].getText().toString().equals("")){
                     buttonList[i].setVisibility(View.INVISIBLE);
-                    System.out.println("Button " + i + " set INVISIBLE");
+                    //System.out.println("Button " + i + " set INVISIBLE");
                 } else {
                     buttonList[i].setVisibility(View.VISIBLE);
-                    System.out.println("Button " + i + " set VISIBLE");
+                    //System.out.println("Button " + i + " set VISIBLE");
                 }
             }
             System.out.println("ALL BUTTON VISIBILITY RESET");
@@ -42,28 +42,28 @@ public class Ui extends Activity{
             for(int i = 0; i < buttonList.length; i++){
                 buttonList[i]=main.attachButton(i);
                 buttonList[i].setText("");
-                System.out.println("Button " + i + " TEXT was reset");
+                //System.out.println("Button " + i + " TEXT was reset");
             }
             System.out.println("ALL BUTTON TEXT RESET");
         }
     }
 
-    public void updateStatsAll(Player player){
+    public void updateStatsAll(Entity player){
         updateLevel(player);
         updateClass(player);
         updateStats(player);
         updateState(player);
     }
 
-    public void updateLevel(Player player){
+    public void updateLevel(Entity player){
         main.statLvl.setText("Level " + player.geteLevel());
     }
 
-    public void updateClass(Player player){
+    public void updateClass(Entity player){
         main.statClass.setText(toUp(player.geteClass()));
     }
 
-    public void updateStats(Player player){
+    public void updateStats(Entity player){
         main.statPhy.setText("Physique " + player.getePhysique());
         main.statInt.setText("Intellect " + player.geteIntellect());
         main.statAgi.setText("Agility " + player.geteAgility());
@@ -73,7 +73,7 @@ public class Ui extends Activity{
         main.statLi.setText("Li "+ player.geteLi());
     }
 
-    public void updateState(Player player){
+    public void updateState(Entity player){
         main.statHealth.setText("Health " + player.geteHealth());
         main.statMana.setText("Mana "+ player.geteMana());
         main.statFatigue.setText("Fatigue " + player.geteFatigue());
