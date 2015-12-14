@@ -2,7 +2,10 @@ package moderbord.huntforcoffee;
 
 import android.content.Context;
 
-import moderbord.huntforcoffee.Enteties.Player;
+import moderbord.huntforcoffee.GameFunctions.Armour;
+import moderbord.huntforcoffee.GameFunctions.Inventory;
+import moderbord.huntforcoffee.GameFunctions.Resistance;
+import moderbord.huntforcoffee.GameFunctions.Weapon;
 
 /**
  * Created by Moderbord on 2015-12-07.
@@ -13,9 +16,17 @@ public abstract class Entity {
 
     private String eName, eGender, eClass, eRace, eFaction;
     private int eLevel, ePhysique, eIntellect, eAgility, eQuickness, eCharisma, eLuck, eLi, eMaxHealth, eHealth, eMaxMana, eMana, eMaxFatigue, eFatigue, eLu, eMinLu, eExperience, eExpToLvl;
+    private Weapon backWep, mainWep, offWep;
+    private Armour armHead, armShoulders, armChest, armGloves, armLegs, armFeet;
+    private Resistance resistance;
+    private Inventory inventory;
 
 
-    public Entity(Context context, String eName, String eGender, String eClass, String eRace, String eFaction, int eLevel, int ePhysique, int eIntellect, int eAgility, int eQuickness, int eCharisma, int eLuck, int eLi, int eMaxHealth, int eHealth, int eMaxMana, int eMana, int eMaxFatigue, int eFatigue, int eLu, int eMinLu, int eExperience, int eExpToLvl){
+    public Entity(Context context, String eName, String eGender, String eClass, String eRace, String eFaction, int eLevel, int ePhysique,
+                  int eIntellect, int eAgility, int eQuickness, int eCharisma, int eLuck, int eLi, int eMaxHealth, int eHealth,
+                  int eMaxMana, int eMana, int eMaxFatigue, int eFatigue, int eLu, int eMinLu, int eExperience, int eExpToLvl,
+                  Weapon backWep, Weapon mainWep, Weapon offWep, Armour armHead, Armour armShoulders, Armour armChest, Armour armGloves,
+                  Armour armLegs, Armour armFeet, Resistance resistance, Inventory inventory){
         this.main = (MainActivity) context;
         this.eName = eName;
         this.eGender = eGender;
@@ -40,6 +51,17 @@ public abstract class Entity {
         this.eMinLu = eMinLu;
         this.eExperience = eExperience;
         this.eExpToLvl = eExpToLvl;
+        this.backWep = backWep;
+        this.mainWep = mainWep;
+        this.offWep = offWep;
+        this.armHead = armHead;
+        this.armShoulders = armShoulders;
+        this.armChest = armChest;
+        this.armGloves = armGloves;
+        this.armLegs = armLegs;
+        this.armFeet = armFeet;
+        this.resistance = resistance;
+        this.inventory = inventory;
     }
 
     public String geteName() {
@@ -224,6 +246,94 @@ public abstract class Entity {
 
     public void seteExpToLvl(int eExpToLvl) {
         this.eExpToLvl = eExpToLvl;
+    }
+
+    public Weapon getBackWep() {
+        return backWep;
+    }
+
+    public void setBackWep(Weapon backWep) {
+        this.backWep = backWep;
+    }
+
+    public Weapon getMainWep() {
+        return mainWep;
+    }
+
+    public void setMainWep(Weapon mainWep) {
+        this.mainWep = mainWep;
+    }
+
+    public Weapon getOffWep() {
+        return offWep;
+    }
+
+    public void setOffWep(Weapon offWep) {
+        this.offWep = offWep;
+    }
+
+    public Armour getArmHead() {
+        return armHead;
+    }
+
+    public void setArmHead(Armour armHead) {
+        this.armHead = armHead;
+    }
+
+    public Armour getArmShoulders() {
+        return armShoulders;
+    }
+
+    public void setArmShoulders(Armour armShoulders) {
+        this.armShoulders = armShoulders;
+    }
+
+    public Armour getArmChest() {
+        return armChest;
+    }
+
+    public void setArmChest(Armour armChest) {
+        this.armChest = armChest;
+    }
+
+    public Armour getArmGloves() {
+        return armGloves;
+    }
+
+    public void setArmGloves(Armour armGloves) {
+        this.armGloves = armGloves;
+    }
+
+    public Armour getArmLegs() {
+        return armLegs;
+    }
+
+    public void setArmLegs(Armour armLegs) {
+        this.armLegs = armLegs;
+    }
+
+    public Armour getArmFeet() {
+        return armFeet;
+    }
+
+    public void setArmFeet(Armour armFeet) {
+        this.armFeet = armFeet;
+    }
+
+    public Resistance getResistance() {
+        return resistance;
+    }
+
+    public void setResistance(Resistance resistance) {
+        this.resistance = resistance;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
     }
 
     public abstract void info();

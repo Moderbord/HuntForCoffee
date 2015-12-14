@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import moderbord.huntforcoffee.Enteties.Player;
+import moderbord.huntforcoffee.GameFunctions.Item;
 
 public class MainActivity extends Activity {
 
@@ -16,8 +17,9 @@ public class MainActivity extends Activity {
     public CharCreation charCreation = new CharCreation(this);
     public Ui ui = new Ui(this);
     public Flags flags = new Flags(this);
-    public Entity player = new Player(this, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
     public SaveLoad saveLoad = new SaveLoad(this);
+    public Item item = new Item(this);
+    public Entity player = new Player(this, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, null, null, null, null, null, null, null, null);
 
 
     TextView mainTextWindow, subTextWindow, statPhy, statInt, statAgi, statQui, statCha, statLuck, statLi, statHealth, statMana, statFatigue, statLu, statLvl, statClass, timeClock, timeDate;
