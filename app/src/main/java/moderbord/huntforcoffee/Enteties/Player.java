@@ -29,10 +29,12 @@ public class Player extends Entity{
         main.flags.mainMenu = false;
         System.out.println("INFO from Player here!");
         main.appendText("YOU ARE STRONG " + geteName() + "!");
+        try {main.appendText(this.getInventory().printInventory(this));} catch (Exception e) {}
         main.submitText();
 
         main.ui.toggleButtons(1);
         main.eventManager.clrEventList();
+        //main.eventManager.prepEvent("Inventory", 9099, 2);
         main.eventManager.prepEvent("Options", 9099, 4);
         main.eventManager.prepEvent("Back", 99980, 9); //IntroGood
         main.ui.toggleButtons(2);

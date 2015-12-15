@@ -3,6 +3,8 @@ package moderbord.huntforcoffee;
 import android.content.Context;
 import android.view.View;
 
+import moderbord.huntforcoffee.GameFunctions.Inventory;
+
 /**
  * Created by Moderbord on 2015-12-06.
  */
@@ -204,6 +206,7 @@ public class CharCreation {
             main.player.seteExperience(0);
             main.player.seteExpToLvl(200);
             main.ui.updateStatsAll(main.player);
+            main.player.setInventory(new Inventory());
         } catch (Exception e) {
             String error = e.getMessage();
             System.out.println(error);

@@ -30,10 +30,54 @@ public class EventManager {
 
     public void getNextEvent(int bIndex, String text){
         eventChoice = text;
-        if (eventList[bIndex] != 0){
+        if (eventList[bIndex] != 0) {
             System.out.println("Try to match event with ID: " + eventList[bIndex] + " with index: " + bIndex);
 
-            if (eventList[bIndex] == 99991){
+            if (eventList[bIndex] == 8008){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.saveLoad.mainMenu();
+
+            } else if (eventList[bIndex] == 9000){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.saveLoad.saveGame();
+
+            } else if (eventList[bIndex] == 9001){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.saveLoad.saveGameSlot();
+
+            } else if (eventList[bIndex] == 9002){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.saveLoad.loadGame();
+
+            } else if (eventList[bIndex] == 9003){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.saveLoad.loadGameSlot();
+
+            } else if (eventList[bIndex] == 9004){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.saveLoad.deleteSave();
+
+            } else if (eventList[bIndex] == 9005){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.saveLoad.deleteSaveSlot();
+
+            } else if (eventList[bIndex] == 9099){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.saveLoad.gameOptions();
+
+            } else if (eventList[bIndex] == 10001){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.eventClass.getForrest();
+
+            } else if (eventList[bIndex] == 11111){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.player.info();
+
+            } else if (eventList[bIndex] == 99980) {
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.eventClass.introGood();
+
+            } else if (eventList[bIndex] == 99991){
                 System.out.println("Matched event with ID " + eventList[bIndex] + "...");
                 main.charCreation.ccPartOne();
 
@@ -60,42 +104,6 @@ public class EventManager {
             } else if (eventList[bIndex] == 99997){
                 System.out.println("Matched event with ID " + eventList[bIndex] + "...");
                 main.charCreation.ccPartSeven();
-
-            } else if (eventList[bIndex] == 99980){
-                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
-                main.eventClass.introGood();
-
-            } else if (eventList[bIndex] == 11111){
-                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
-                main.player.info();
-
-            } else if (eventList[bIndex] == 10001){
-                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
-                main.eventClass.getForrest();
-
-            } else if (eventList[bIndex] == 8008){
-                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
-                main.saveLoad.mainMenu();
-
-            } else if (eventList[bIndex] == 9000){
-                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
-                main.saveLoad.saveGame();
-
-            } else if (eventList[bIndex] == 9001){
-                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
-                main.saveLoad.saveGameSlot();
-
-            } else if (eventList[bIndex] == 9002){
-                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
-                main.saveLoad.loadGame();
-
-            } else if (eventList[bIndex] == 9003){
-                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
-                main.saveLoad.loadGameSlot();
-
-            } else if (eventList[bIndex] == 9099){
-                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
-                main.saveLoad.gameOptions();
 
             } else {
                 System.out.println("No matching event.");
