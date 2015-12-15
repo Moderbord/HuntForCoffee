@@ -19,7 +19,9 @@ public class MainActivity extends Activity {
     public Flags flags = new Flags(this);
     public SaveLoad saveLoad = new SaveLoad(this);
     public Item item = new Item(this);
+    public EntityInitiator entityInitiator = new EntityInitiator(this);
     public Entity player = new Player(this, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, null, null, null, null, null, null, null, null);
+    public Entity jheero;
 
 
     TextView mainTextWindow, subTextWindow, statPhy, statInt, statAgi, statQui, statCha, statLuck, statLi, statHealth, statMana, statFatigue, statLu, statLvl, statClass, timeClock, timeDate;

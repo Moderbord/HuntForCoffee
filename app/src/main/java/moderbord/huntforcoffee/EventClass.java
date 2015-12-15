@@ -36,11 +36,6 @@ public class EventClass {
         main.appendText("Welcome to the jungle!");
         main.appendText("We hope you brought lotion.");
         main.appendText(main.player.getInventory().addItemToInv(main.player, new Item("Burger", "consumable", 1),1));
-        main.appendText(main.player.getInventory().addItemToInv(main.player, new Item("Herp", "consumable", 1),1));
-        main.appendText(main.player.getInventory().addItemToInv(main.player, new Item("Derp", "consumable", 1),3));
-        main.appendText(main.player.getInventory().addItemToInv(main.player, new Item("Adda", "consumable", 1),5));
-        main.appendText(main.player.getInventory().addItemToInv(main.player, new Item("Agedf", "consumable", 1),8));
-        main.appendText(main.player.getInventory().addItemToInv(main.player, new Item("Drake", "consumable", 1),1));
         main.submitText();
 
         main.ui.toggleButtons(1)
