@@ -3,6 +3,7 @@ package moderbord.huntforcoffee;
 import android.content.Context;
 import android.view.View;
 
+import moderbord.huntforcoffee.Enteties.Player;
 import moderbord.huntforcoffee.GameFunctions.Inventory;
 
 /**
@@ -19,6 +20,8 @@ public class CharCreation {
 
     public void ccPartOne(){ // ID 99991
         System.out.println("CCPARTONE from CharacterCreation here!");
+        main.player = new Player(main, null, null, "Class *", null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, null, null, null, null, null, null, null, null);
+        main.ui.updateStatsAll(main.player);
         main.appendText("So this is where your journey will start");
         main.submitText();
 

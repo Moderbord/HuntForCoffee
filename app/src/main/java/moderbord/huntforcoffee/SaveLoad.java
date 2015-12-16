@@ -10,6 +10,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import moderbord.huntforcoffee.Enteties.Player;
 import moderbord.huntforcoffee.GameFunctions.Inventory;
 import moderbord.huntforcoffee.GameFunctions.Item;
 
@@ -286,6 +287,7 @@ public class SaveLoad {
         System.out.println("LOADGAMESLOT from SaveLoad here!");
         String which = main.eventManager.getEventChoice();
         SharedPreferences sp = main.getSharedPreferences(which, 0);
+        main.player = new Player(main, null, null, "Class *", null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, null, null, null, null, null, null, null, null);
         Gson gson = new Gson();
 
         Entity tempEntity;

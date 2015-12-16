@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
     public Item item = new Item(this);
     public EntityInitiator entityInitiator = new EntityInitiator(this);
     public Consumer consumer = new Consumer(this);
-    public Entity player = new Player(this, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, null, null, null, null, null, null, null, null);
+    public Entity player;
     public Entity jheero;
 
 

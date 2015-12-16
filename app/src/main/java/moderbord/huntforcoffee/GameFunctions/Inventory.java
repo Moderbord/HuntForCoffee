@@ -16,7 +16,7 @@ public class Inventory{
         String string = "";
             for(int i = 0; i < inventory.length; i++){
                 if (inventory[i] != null) {
-                    string = string + "\n"+ i + ": " +inventory[i].getiName() + ", qty " + inventory[i].getAmount();
+                    string = string + "\n"+ (i+1) + ": " +inventory[i].getiName() + ", qty " + inventory[i].getAmount();
                 }
             }
         String inv = "Your inventory:\n" + string;
