@@ -34,7 +34,7 @@ public class SaveLoad {
         main.eventManager.clrEventList();
         main.eventManager.prepEvent("New", 99991, 0);
         main.eventManager.prepEvent("Load", 9002, 1);
-        main.eventManager.prepEvent("Continue", 11111, 4);
+        if(main.flags.activeGame){main.eventManager.prepEvent("Continue", 11111, 4);}
         main.eventManager.prepEvent("Delete", 9004, 8);
         main.ui.toggleButtons(2);
     }
@@ -67,56 +67,56 @@ public class SaveLoad {
             SharedPreferences one = main.getSharedPreferences("One", 0);
             String name = one.getString("0", "");
             main.appendText("\n\n1. " + name);
-            if (!name.equals("")) {main.eventManager.prepEvent("One", 9001, 0);}
+            main.eventManager.prepEvent("One", 9001, 0);
         } catch (Exception e) {}
 
         try {
             SharedPreferences one = main.getSharedPreferences("Two", 0);
             String name = one.getString("0", "");
             main.appendText("\n\n2. " + name);
-            if (!name.equals("")) {main.eventManager.prepEvent("Two", 9001, 1);}
+            main.eventManager.prepEvent("Two", 9001, 1);
         } catch (Exception e) {}
 
         try {
             SharedPreferences one = main.getSharedPreferences("Three", 0);
             String name = one.getString("0", "");
             main.appendText("\n\n3. " + name);
-            if (!name.equals("")) {main.eventManager.prepEvent("Three", 9001, 2);}
+            main.eventManager.prepEvent("Three", 9001, 2);
         } catch (Exception e) {}
 
         try {
             SharedPreferences one = main.getSharedPreferences("Four", 0);
             String name = one.getString("0", "");
             main.appendText("\n\n4. " + name);
-            if (!name.equals("")) {main.eventManager.prepEvent("Four", 9001, 3);}
+            main.eventManager.prepEvent("Four", 9001, 3);
         } catch (Exception e) {}
 
         try {
             SharedPreferences one = main.getSharedPreferences("Five", 0);
             String name = one.getString("0", "");
             main.appendText("\n\n5. " + name);
-            if (!name.equals("")) {main.eventManager.prepEvent("Five", 9001, 4);}
+            main.eventManager.prepEvent("Five", 9001, 4);
         } catch (Exception e) {}
 
         try {
             SharedPreferences one = main.getSharedPreferences("Six", 0);
             String name = one.getString("0", "");
             main.appendText("\n\n6. " + name);
-            if (!name.equals("")) {main.eventManager.prepEvent("Six", 9001, 5);}
+            main.eventManager.prepEvent("Six", 9001, 5);
         } catch (Exception e) {}
 
         try {
             SharedPreferences one = main.getSharedPreferences("Seven", 0);
             String name = one.getString("0", "");
             main.appendText("\n\n7. " + name);
-            if (!name.equals("")) {main.eventManager.prepEvent("Seven", 9001, 6);}
+            main.eventManager.prepEvent("Seven", 9001, 6);
         } catch (Exception e) {}
 
         try {
             SharedPreferences one = main.getSharedPreferences("Eight", 0);
             String name = one.getString("0", "");
             main.appendText("\n\n8. " + name);
-            if (!name.equals("")) {main.eventManager.prepEvent("Eight", 9001, 7);}
+            main.eventManager.prepEvent("Eight", 9001, 7);
         } catch (Exception e) {}
 
         try {
@@ -124,7 +124,7 @@ public class SaveLoad {
             String name = one.getString("0", "");
             main.appendText("\n\n9. " + name);
             main.submitText();
-            if (!name.equals("")) {main.eventManager.prepEvent("Nine", 9001, 8);}
+            main.eventManager.prepEvent("Nine", 9001, 8);
         } catch (Exception e) {}
         if(main.flags.mainMenu){
             main.eventManager.prepEvent("Back", 8008, 9);} else {main.eventManager.prepEvent("Back", 11111, 9);}
@@ -359,6 +359,7 @@ public class SaveLoad {
         main.eventManager.clrEventList();
         main.eventManager.prepEvent("Done", 11111, 0);
         main.ui.toggleButtons(2);
+        main.flags.activeGame = true;
     }
 
     public void deleteSave(){ // ID 9004

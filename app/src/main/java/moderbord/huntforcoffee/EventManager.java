@@ -3,6 +3,8 @@ package moderbord.huntforcoffee;
 import android.content.Context;
 import android.widget.Button;
 
+import java.util.Random;
+
 /**
  * Created by Moderbord on 2015-12-05.
  */
@@ -11,6 +13,9 @@ public class EventManager {
     protected MainActivity main;
     public int eventList[] = new int[10];
     public String eventChoice;
+
+    Random random = new Random();
+    int min, max, mixture;
 
     public EventManager(Context context){
         this.main = (MainActivity) context;
@@ -69,11 +74,43 @@ public class EventManager {
                 System.out.println("Matched event with ID " + eventList[bIndex] + "...");
                 main.eventClass.getForrest();
 
+            } else if (eventList[bIndex] == 10002){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.eventClass.forrestSearchOne();
+
+            } else if (eventList[bIndex] == 10003){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.eventClass.forrestSearchTwo();
+
+            } else if (eventList[bIndex] == 10004){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.eventClass.forrestSearchThree();
+
             } else if (eventList[bIndex] == 11111){
                 System.out.println("Matched event with ID " + eventList[bIndex] + "...");
                 main.player.info();
 
-            } else if (eventList[bIndex] == 99980) {
+            } else if (eventList[bIndex] == 11112){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.player.inventory();
+
+            } else if (eventList[bIndex] == 11113){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.player.inventoryChoice();
+
+            } else if (eventList[bIndex] == 11114){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.player.consumeX();
+
+            } else if (eventList[bIndex] == 11115){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.player.equipX();
+
+            } else if (eventList[bIndex] == 11116){
+                System.out.println("Matched event with ID " + eventList[bIndex] + "...");
+                main.player.dropX();
+
+            } else if (eventList[bIndex] == 99901) {
                 System.out.println("Matched event with ID " + eventList[bIndex] + "...");
                 main.eventClass.introGood();
 
@@ -125,6 +162,17 @@ public class EventManager {
 
     public String getEventChoice(){
         return eventChoice;
+    }
+
+    public int stirThePot(String event){
+        switch (event){
+            case "forrest":
+                min = 10002; max =10005; mixture = random.nextInt(max-min) + min;
+                break;
+            default:
+                mixture = 0;
+        }
+        return mixture;
     }
 
 }

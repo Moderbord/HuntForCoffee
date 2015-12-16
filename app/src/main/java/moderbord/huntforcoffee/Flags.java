@@ -11,5 +11,7 @@ public class Flags {
     public Flags(Context context){this.main = (MainActivity) context;}
 
     public boolean mainMenu = true;
+    public boolean activeGame = false;
+    public boolean consuming = true;
 
 }

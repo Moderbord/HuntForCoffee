@@ -11,15 +11,15 @@ public class Inventory{
 
     private Item inventory[] = new Item[5];
 
-    public  String printInventory(Entity entity){ // ID 11110
+    public String printInventory(Entity entity){
         this.inventory = entity.getInventory().inventory;
         String string = "";
             for(int i = 0; i < inventory.length; i++){
                 if (inventory[i] != null) {
-                    string = string + "\n"+ inventory[i].getiName() + ", " + inventory[i].getAmount();
+                    string = string + "\n"+ i + ": " +inventory[i].getiName() + ", qty " + inventory[i].getAmount();
                 }
             }
-        String inv = "\n\nInventory:\n" + string;
+        String inv = "Your inventory:\n" + string;
         return inv;
     }
 
@@ -27,7 +27,7 @@ public class Inventory{
         this.inventory = entity.getInventory().inventory;
         String string = "\n\nYou have no room for " + item.getiName() + " in your inventory";
         for(int i = 0; i < inventory.length; i++){
-            if(inventory[i] != null && inventory[i].getiName().equals(item.getiName()) && !item.equals(Gear.class)){
+            if(inventory[i] != null && inventory[i].getiName().equals(item.getiName()) && !item.getType().equals("weapon")){
                 inventory[i].setAmount(inventory[i].getAmount() + amount);
                 if(amount > 1){
                     string = "\n\n" + entity.geteName() + " have received " + amount + " additional " + item.getiName() + "s";
@@ -56,8 +56,33 @@ public class Inventory{
         }
     }
 
+    public void sortInventory(){
+        for(int i = 0; i < 4; i++){
+            int z = i + 1;
+            if(inventory[i] == null && inventory[z] != null){
+                inventory[i] = inventory[z];
+                inventory[z] = null;
+            }
+        }
+    }
+
     public void setInvItem(Entity entity, int x, Item item) {
         this.inventory = entity.getInventory().inventory;
         inventory[x] = item;
     }
+
+    public void removeItem(Entity entity, int x) {
+        this.inventory = entity.getInventory().inventory;
+        inventory[x] = null;
+        sortInventory();
+    }
+
+    public void consumeItem(Entity entity, int x){
+        this.inventory = entity.getInventory().inventory;
+        if(inventory[x].getType().equals("consumable")){
+
+        }
+    }
+
+
 }

@@ -337,4 +337,10 @@ public abstract class Entity {
     }
 
     public abstract void info();
+    public abstract void inventory();
+    public abstract void inventoryChoice();
+    public abstract void consumeX();
+    public abstract void equipX();
+    public abstract void dropX();
+
 }

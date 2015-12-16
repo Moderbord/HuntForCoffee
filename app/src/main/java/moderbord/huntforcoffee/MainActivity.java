@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import moderbord.huntforcoffee.Enteties.Player;
+import moderbord.huntforcoffee.GameFunctions.Consumer;
 import moderbord.huntforcoffee.GameFunctions.Item;
 
 public class MainActivity extends Activity {
@@ -20,6 +21,7 @@ public class MainActivity extends Activity {
     public SaveLoad saveLoad = new SaveLoad(this);
     public Item item = new Item(this);
     public EntityInitiator entityInitiator = new EntityInitiator(this);
+    public Consumer consumer = new Consumer(this);
     public Entity player = new Player(this, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, null, null, null, null, null, null, null, null);
     public Entity jheero;
 

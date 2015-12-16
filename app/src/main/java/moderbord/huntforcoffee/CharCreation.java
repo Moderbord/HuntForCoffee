@@ -214,8 +214,8 @@ public class CharCreation {
 
         main.ui.toggleButtons(1);
         main.eventManager.clrEventList();
-        main.eventManager.prepEvent("Begin", 99980, 0);
+        main.eventManager.prepEvent("Begin", 99901, 0);
         main.ui.toggleButtons(2);
-
+        main.flags.activeGame = true;
     }
 }
